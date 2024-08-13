@@ -1,0 +1,91 @@
+<!doctype html>
+    <html>
+        <head>
+            <!-- Font Awesome -->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+            <!-- Bootstrap core CSS -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+            <!-- Material Design Bootstrap -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/css/mdb.min.css" rel="stylesheet">
+
+            <style>
+              html{
+                  zoom: 0.55;
+              }    
+              .rule{
+                border-bottom: 1px solid black;
+                width:80%;
+              }
+              .mobile{
+                margin-top:-10px;
+              }
+              .email{
+                margin-bottom: 0;    
+              }
+              body{
+                font-family: Roboto, "Helvetica Neue", sans-serif;
+                font-size:30px;
+              }
+            </style>
+        
+        </head>
+        <body>
+            <section  class="container col-md-5">
+                <div  class="p-3 mx-auto">
+                   <div  class="mr-auto">
+                      <h1  class="header-name"><strong>{{resume.personalDetails.name}}</strong></h1>
+                      <p ><span ><strong >Email:</strong></span> {{resume.personalDetails.email}}, <span ><strong >Contact:</strong></span>+91({{resume.personalDetails.mobile}}), <span ><strong >Github:</strong></span>{{resume.personalDetails.github}}, <span ><strong >LinkedIn:</strong></span>{{resume.personalDetails.linkedln}} </p>
+                   </div>
+                   <div  class="resume-body">
+                      <div  class="technical_skills_section">
+                         <h1  class="section-name"><b >Technical Skills</b></h1>
+                         </div>
+                         <hr/>
+                         <p >{{resume.personalDetails.skills}} </p>
+                      </div>
+                      <div  class="education_section">
+                         <h1  class="section-name"><strong >Education</strong></h1>
+                         <hr/>
+                         <div  class="ng-star-inserted">
+                            <li ><strong >Bachelor's Degree</strong> in <strong >{{resume.education.degree}}</strong> from {{resume.education.college}},[ <strong >{{resume.education.collegeFrom}} - {{resume.education.collegeTo}} </strong>] </li>
+                         </div>
+                         <!---->
+                      </div>
+                      <div  class="experience_section" style="margin-top:30px">
+                         <h1  class="section-name"><strong >Experience</strong></h1>
+                         <hr/>
+                         <div  class="ng-star-inserted">
+                            <li ><strong >{{resume.experience.organisation}} ({{resume.experience.position}}, ({{resume.experience.companyFrom}}) - {{#ifCond resume.experience.presentDate '==' false }}({{resume.experience.companyTo}}){{/ifCond}} {{#ifCond resume.experience.presentDate '==' true }} Present {{/ifCond}}) </strong><br >{{resume.experience.description}} </li>
+                         </div>
+                         <!---->
+                      </div>
+                      <div  class="project_section" style="margin-top:30px">
+                         <h1  class="section-name"><strong >Project</strong></h1>
+                         <hr/>
+                         <div  class="ng-star-inserted">
+                            <li ><strong >{{resume.project.title}}</strong>: {{resume.project.Pdescription}} {{resume.project.link}} </li>
+                         </div>
+                         <!---->
+                      </div>
+                      <div  class="hobbies_section" style="margin-top:30px">
+                         <h1  class="section-name"><strong >Extra Curriculars / Hobbies</strong></h1>
+                         <hr/>
+                         <div  class="ng-star-inserted">
+                            <li > {{resume.hobbies.hdescription}} </li>
+                         </div>
+                         <!---->
+                      </div>
+                   </div>
+                </div>
+             </section>
+        
+            <!-- JQuery -->
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Bootstrap tooltips -->
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+            <!-- Bootstrap core JavaScript -->
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            <!-- MDB core JavaScript -->
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/js/mdb.min.js"></script>
+        </body>
+    </html> 
