@@ -31,13 +31,12 @@ var options = {
 var html = file.readFileSync("template.html", "utf8");
 
 app.post('/create-pdf',(req,res)=>{
- var data1 = req.body;
- console.log(data1);
+ var data = req.body;
 
  var document = {
     html: html,
     data: {
-      resume: data1,
+      resume: data,
     },
     path: "./Resume.pdf",
     type: "",
@@ -45,7 +44,6 @@ app.post('/create-pdf',(req,res)=>{
 
   pdf.create(document, options)
   .then((response) => {
-    console.log(response);
     return res.json({message : 'Pdf generated successfully.'});
   })
   .catch((error) => {
